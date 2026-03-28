@@ -1,0 +1,103 @@
+.about-section {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+  padding: 100px 20px;
+}
+
+/* Layout */
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left Side */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-desc {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-text p {
+  color: #cbd5f5;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.about-text span {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Points */
+.about-points {
+  margin-top: 20px;
+}
+
+.about-points div {
+  margin-bottom: 8px;
+  color: #a5f3fc;
+  font-size: 0.95rem;
+}
+
+/* Right Cards */
+.about-cards {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card */
+.about-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(56,189,248,0.3);
+}
+
+.about-card h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
+}
