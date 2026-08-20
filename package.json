@@ -1,5 +1,5 @@
+
 {
-  "homepage": "https://Aartimore31.github.io/my-portfolio",
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -50,3 +50,4 @@
     "tailwindcss": "^4.1.11"
   }
 }
+
