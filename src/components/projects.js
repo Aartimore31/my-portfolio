@@ -6,50 +6,50 @@ const projects = [
   {
     title: "HealthLens AI",
     description:
-      "AI-powered healthcare platform: symptom analysis, medicine tracker, health insights, and personalized Ayurveda recommendations for proactive health monitoring.",
+      "AI-powered healthcare platform that provides symptom analysis, medicine reminders, health dashboards, and personalized Ayurveda recommendations for proactive healthcare management.",
     tech: ["React", "Node.js", "MongoDB", "Express", "AI/ML", "MERN"],
     github: "https://github.com/Aartimore31",
-    live: "#"
+    live: "#",
   },
   {
     title: "Automatic Fruit Grading System",
     description:
-      "Real-time video processing system that grades fruits based on size, color, and ripeness using computer vision, improving efficiency for agricultural businesses.",
-    tech: ["Python", "OpenCV", "ML", "Video Processing"],
+      "Computer vision-based application that automatically grades fruits according to size, color, quality, and ripeness using machine learning and real-time image processing.",
+    tech: ["Python", "OpenCV", "Machine Learning", "Computer Vision"],
     github: "https://github.com/Aartimore31",
-    live: "#"
+    live: "#",
   },
   {
     title: "Smart IoT Traffic Management",
     description:
-      "IoT system monitoring urban traffic in real-time using sensors and AI. Optimizes signals and alerts authorities to reduce congestion.",
-    tech: ["IoT", "Node.js", "React", "Sensors", "AI"],
+      "IoT-enabled traffic monitoring system using sensors and AI algorithms to optimize traffic signals, reduce congestion, and improve smart city transportation.",
+    tech: ["React", "Node.js", "IoT", "Sensors", "AI"],
     github: "https://github.com/Aartimore31",
-    live: "#"
+    live: "#",
   },
   {
     title: "Training & Placement Management System",
     description:
-      "Full-stack MERN application to manage student profiles, track placement activities, and provide analytics to improve placement efficiency in colleges.",
+      "A complete MERN stack application for managing student profiles, placement activities, company drives, and placement analytics in colleges.",
     tech: ["MongoDB", "Express", "React", "Node.js", "MERN"],
     github: "https://github.com/Aartimore31",
-    live: "#"
+    live: "#",
   },
   {
     title: "DSBDA College Analytics",
     description:
-      "Data Science & Big Data Analytics project predicting student performance, analyzing trends, and providing actionable insights for college administration.",
-    tech: ["Python", "Pandas", "NumPy", "ML", "Data Visualization"],
+      "Data analytics project that predicts student performance, visualizes academic trends, and generates useful reports using machine learning techniques.",
+    tech: ["Python", "Pandas", "NumPy", "ML", "Visualization"],
     github: "https://github.com/Aartimore31",
-    live: "#"
+    live: "#",
   },
   {
     title: "AI Resume Screening Tool",
     description:
-      "Smart AI tool to evaluate resumes, extract skills, and rank candidates, improving recruitment efficiency for HR departments.",
-    tech: ["Python", "NLP", "ML", "React", "Node.js"],
+      "AI-powered recruitment platform that extracts resume information, analyzes candidate skills, and ranks applicants automatically using NLP.",
+    tech: ["Python", "NLP", "React", "Node.js", "AI"],
     github: "https://github.com/Aartimore31",
-    live: "#"
+    live: "#",
   },
 ];
 
@@ -57,9 +57,17 @@ const Projects = () => {
   return (
     <section className="projects" id="projects">
       <div className="projects-header">
-        <h2 className="section-title">Featured Projects</h2>
+        <span className="section-tag">MY WORK</span>
+
+        <h2 className="section-title">
+          Featured <span>Projects</span>
+        </h2>
+
         <p className="projects-intro">
-          Highlighting real-world projects demonstrating my expertise in AI, IoT, MERN stack, and Data Analytics. Each project focuses on innovation, scalability, and impactful solutions.
+          A collection of projects demonstrating my expertise in Full Stack
+          Development, Artificial Intelligence, Machine Learning, IoT, and Data
+          Analytics. Every project reflects my passion for solving real-world
+          problems through technology.
         </p>
       </div>
 
@@ -68,29 +76,47 @@ const Projects = () => {
           <motion.div
             className="project-card"
             key={index}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 120 }}
+            whileHover={{ y: -10 }}
+            transition={{ duration: 0.35 }}
           >
-            <h3 className="project-title">{project.title}</h3>
+            <div className="card-glow"></div>
+
+            <div className="card-header">
+              <div className="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div className="title-box">
+                <h3>{project.title}</h3>
+              </div>
+            </div>
+
             <p className="project-description">{project.description}</p>
 
             <div className="tech-stack">
               {project.tech.map((tech, i) => (
-                <span key={i} className="tech-pill">
-                  {tech}
-                </span>
+                <span key={i}>{tech}</span>
               ))}
             </div>
 
-            <div className="project-buttons">
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn primary">
+            <div className="project-footer">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-btn"
+              >
                 GitHub
               </a>
-              {project.live && (
-                <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn secondary">
-                  Live Demo
-                </a>
-              )}
+
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="live-btn"
+              >
+                Live Demo →
+              </a>
             </div>
           </motion.div>
         ))}

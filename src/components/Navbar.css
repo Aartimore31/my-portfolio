@@ -1,121 +1,592 @@
-/* Navbar container */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #0f172a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 40px;
-  z-index: 100;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Logo */
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #38bdf8;
-  cursor: pointer;
+html{
+    scroll-behavior:smooth;
 }
 
-/* Links */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  transition: all 0.3s ease;
+body{
+    font-family:"Poppins",sans-serif;
 }
 
-.nav-links a {
-  color: #e2e8f0;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+/*====================================
+            NAVBAR
+====================================*/
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    padding:22px 0;
+
+    transition:.4s ease;
 }
 
-.nav-links a:hover {
-  color: #38bdf8;
-  transform: translateY(-2px);
+/* Scroll Effect */
+
+.navbar-scroll{
+
+    padding:14px 0;
+
+    background:rgba(7,17,31,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 8px 35px rgba(0,0,0,.25);
 }
 
-/* CV button */
-.cv-button {
-  background: #38bdf8;
-  color: #0f172a;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+/*====================================
+        CONTAINER
+====================================*/
+
+.navbar-container{
+
+    width:90%;
+
+    max-width:1350px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
 }
 
-.cv-button:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 8px 20px rgba(56,189,248,0.4);
+/*====================================
+            LOGO
+====================================*/
+
+.logo{
+
+    text-decoration:none;
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:white;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
 }
 
-/* Social icons */
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.logo span{
+
+    background:linear-gradient(
+        90deg,
+        #38bdf8,
+        #67e8f9,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
 }
 
-.social-icons a svg {
-  width: 24px;
-  height: 24px;
-  fill: #e2e8f0;
-  transition: all 0.3s ease;
+.logo:hover{
+
+    transform:scale(1.05);
 }
 
-.social-icons a:hover svg {
-  fill: #38bdf8;
-  transform: scale(1.2);
+/*====================================
+        NAV LINKS
+====================================*/
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:38px;
 }
 
-/* Hamburger menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
+.nav-menu a{
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:#d7e5f7;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.35s;
 }
 
-.hamburger .bar {
-  height: 3px;
-  width: 25px;
-  background-color: #e2e8f0;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+.nav-menu a:hover{
+
+    color:#38bdf8;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 250px;
-    background: #1e293b;
-    flex-direction: column;
-    gap: 30px;
-    padding: 60px 20px;
-    transition: all 0.3s ease;
-    box-shadow: -2px 0 20px rgba(0,0,0,0.5);
+/* underline animation */
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:#38bdf8;
+
+    transition:.35s;
+}
+
+.nav-menu a:hover::after{
+
+    width:100%;
+
+    left:0;
+}
+
+/*====================================
+            RIGHT
+====================================*/
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+/*====================================
+        SOCIAL ICONS
+====================================*/
+
+.nav-social{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.nav-social a{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.nav-social a:hover{
+
+    transform:translateY(-5px);
+
+    background:#38bdf8;
+
+    color:#07111f;
+
+    box-shadow:0 10px 25px rgba(56,189,248,.35);
+}
+
+/*====================================
+        RESUME BUTTON
+====================================*/
+
+.resume-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #38bdf8,
+        #0ea5e9
+    );
+
+    color:#07111f;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(56,189,248,.25);
+}
+
+.resume-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(56,189,248,.4);
+}
+
+/*====================================
+        HAMBURGER
+====================================*/
+
+.menu-icon{
+
+    display:none;
+
+    font-size:26px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.menu-icon:hover{
+
+    color:#38bdf8;
+}
+
+.mobile-btn{
+
+    display:none;
+}
+/* ====================================
+   MOBILE MENU
+==================================== */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    padding: 16px 0;
   }
 
-  .nav-links.open {
+  .navbar-container {
+    width: 92%;
+  }
+
+  .menu-icon {
+    display: block;
+    z-index: 1100;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .mobile-btn {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .nav-social {
+    display: none;
+  }
+
+  .nav-menu {
+
+    position: fixed;
+
+    top: 0;
+
+    right: -100%;
+
+    width: 320px;
+
+    height: 100vh;
+
+    background: rgba(7,17,31,.96);
+
+    backdrop-filter: blur(18px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    transition: .45s ease;
+
+    border-left: 1px solid rgba(255,255,255,.08);
+
+    box-shadow: -15px 0 40px rgba(0,0,0,.35);
+  }
+
+  .nav-menu.active {
     right: 0;
   }
 
-  .hamburger {
-    display: flex;
+  .nav-menu a {
+
+    font-size: 18px;
+
+    width: 100%;
+
+    text-align: center;
   }
 
-  .social-icons {
-    margin-top: 20px;
+  .nav-menu a::after {
+    display: none;
   }
+
+}
+
+/* ====================================
+        TABLET
+==================================== */
+
+@media (max-width:768px){
+
+.logo{
+
+font-size:1.7rem;
+
+}
+
+.resume-btn{
+
+padding:12px 18px;
+
+font-size:14px;
+
+}
+
+}
+
+/* ====================================
+        MOBILE
+==================================== */
+
+@media (max-width:480px){
+
+.navbar{
+
+padding:14px 0;
+
+}
+
+.navbar-container{
+
+width:92%;
+
+}
+
+.logo{
+
+font-size:1.5rem;
+
+}
+
+.nav-menu{
+
+width:100%;
+
+}
+
+.resume-btn{
+
+width:90%;
+
+}
+
+}
+
+/* ====================================
+      SMOOTH ANIMATION
+==================================== */
+
+.nav-menu a{
+
+transition:
+color .3s,
+transform .3s;
+
+}
+
+.nav-menu a:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* ====================================
+      ACTIVE FEEL
+==================================== */
+
+.nav-menu a:active{
+
+color:#38bdf8;
+
+}
+
+/* ====================================
+      GLASS SHINE
+==================================== */
+
+.navbar::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:1px;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.15),
+transparent
+);
+
+opacity:.6;
+
+}
+
+/* ====================================
+        LOGO EFFECT
+==================================== */
+
+.logo{
+
+transition:
+transform .3s,
+letter-spacing .3s;
+
+}
+
+.logo:hover{
+
+letter-spacing:1px;
+
+}
+
+/* ====================================
+      BUTTON EFFECT
+==================================== */
+
+.resume-btn{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.resume-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(255,255,255,.25);
+
+transform:skewX(-25deg);
+
+transition:.6s;
+
+}
+
+.resume-btn:hover::before{
+
+left:130%;
+
+}
+
+/* ====================================
+        ICON EFFECT
+==================================== */
+
+.nav-social a{
+
+transition:
+transform .3s,
+background .3s,
+box-shadow .3s;
+
+}
+
+.nav-social a svg{
+
+font-size:18px;
+
+}
+
+/* ====================================
+      FINAL POLISH
+==================================== */
+
+.navbar,
+.nav-menu,
+.resume-btn,
+.logo,
+.nav-social a{
+
+will-change:transform;
+
 }
